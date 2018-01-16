@@ -239,7 +239,7 @@ class Finder
 	{
 		if ( count( $conditions ) > 0 ) {
 			foreach( $conditions as $key => $condition ) {
-				if ( !count( $condition ) ) unset( $conditions[$key] );
+				if ( !is_array($condition) || !count( $condition ) ) unset( $conditions[$key] );
 			}
 		}
 
