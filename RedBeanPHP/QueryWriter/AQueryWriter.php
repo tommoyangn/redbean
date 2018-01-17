@@ -368,9 +368,9 @@ abstract class AQueryWriter
 
 		$sqlConditions = array();
 		foreach ( $conditions as $column => $values ) {
-            if (is_array($values) && (null === $values || !count($values))) {
-                continue;
-            }
+			if ($values === null || (is_array($values) && !count($values))) {
+				continue;
+			}
 
 			$sql = $this->esc( $column );
 			$sql .= ' IN ( ';

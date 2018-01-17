@@ -239,9 +239,9 @@ class Finder
 	{
 		if ( count( $conditions ) > 0 ) {
 			foreach( $conditions as $key => $condition ) {
-                if (is_array($condition) && (null === $condition || !count($condition))) {
-                    unset($conditions[$key]);
-                }
+				if ($condition === null || (is_array($condition) && !count($condition))) {
+					unset($conditions[$key]);
+				}
 			}
 		}
 
